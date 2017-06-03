@@ -100,5 +100,6 @@ pull:
 
 forcePull:
 	git reset --hard HEAD
+	git pull
 
 print-%  : ; @echo $* = $($*)
