@@ -57,7 +57,7 @@ const ecoApi = {
 		$.post(url, data, function get_success(response) {
 			ecoApi.log(ln(), response);
 			// peut être pas besoin de parseJson si $.post s'en occupe
-			callback(this.safelyParseJSON(response));
+			callback(ecoApi.safelyParseJSON(response));
 		}, 'json')
 		.fail(function get_fail() {
 			ecoApi.warn(ln());
@@ -77,7 +77,7 @@ const ecoApi = {
 		// @TODO checker le contenu de data selon request
 		$.post('/api/v1/push/'+request, data, function(response) {
 			this.log(ln(), response);
-			callback(this.safelyParseJSON(response));
+			callback(ecoApi.safelyParseJSON(response));
 		})
 		.fail(function() {
 			this.warn(ln(), response);
