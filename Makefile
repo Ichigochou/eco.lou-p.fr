@@ -33,11 +33,11 @@ SRC= $(shell find . ! -name "*.min.js" -name "*.js")
 OBJ= $(SRC:.js=.min.js)
 NOEXT= $(SRC:.js=)
 
-all: clean min status add status commit push
+all: status add status commit push
 
-diff: clean status diff min
+diff: status diff
 
-master: clean updateTemplate status add
+master: status add
 
 $(NOEXT):
 	$(CC) --js $@.js --js_output_file $@.min.js --language_out ECMASCRIPT5
@@ -94,9 +94,6 @@ push:
 	fi ;\
 	fi ;\
     git push
-
-updateTemplate:
-	git pull origin master
 
 pull:
 	git pull
