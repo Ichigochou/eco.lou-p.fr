@@ -101,4 +101,7 @@ updateTemplate:
 pull:
 	git pull
 
+forcePull:
+	git reset --hard HEAD
+
 print-%  : ; @echo $* = $($*)
