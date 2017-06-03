@@ -4,8 +4,8 @@ $domaine = $_SERVER['HTTP_HOST'];
 
 if ($domaine == "dev-eco.lou-p.fr") {
 	define("_DEV_", true);
-	@ini_set("error_reporting", "-1"); // activation des messages d'erreur en prod
-	@ini_set("display_errors", "-1"); // activation des messages d'erreur en prod
+	@ini_set("error_reporting", "1"); // activation des messages d'erreur en prod
+	@ini_set("display_errors", "1"); // activation des messages d'erreur en prod
 	define("_DOMAIN_", "dev-eco.lou-p.fr");
 	define("_HOST_", "localhost");
 	define("_USER_", "lou-p");
