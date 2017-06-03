@@ -6,6 +6,7 @@ const homeNumber = {
 		homeNumber.block.attr('id', ecoApi.guid());
 		ecoApi.get('nbSignalement', function (response){
 			if (response !== false) {
+				response = response[0];
 				homeNumber.block.find('span').html(response.nbSignalement);
 				homeNumber.block.data('nbSignalement', response.nbSignalement);
 			} else {
