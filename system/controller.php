@@ -32,6 +32,11 @@ switch ($uri->segment[0]) {
 		$controller = array('folder' => '', 'file' => 'signalement');
 		break;
 
+	case 'enlevement':
+		// __CONT_/main.php
+		$controller = array('folder' => '', 'file' => 'enlevement');
+		break;
+
 	case 'api':
 		switch ($uri->segment[1]) {
 			case 'v1':
