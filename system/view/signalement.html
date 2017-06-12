@@ -1,0 +1,47 @@
+<div id="signalement">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h2>Merci de remplir un maximum d'information pour votre demande d'enlevement!</h2>
+			<div class="form-area">  
+		        <form action="demande_post.php" method="post" enctype="multipart/form-data" class="demande">
+		        	<br>
+	    				<div class="form-group">
+							<input type="text" class="form-control" id="address" name="address" placeholder="Adresse" required>
+              				<input id="submit" type="button" value="Geocode">
+						</div>
+							<div id="map"></div>
+	                    <div class="checkbox">
+	                    	<h3>Informations sur l'encombrant</h3>
+		                    <div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="optionsRadios1" value="Gros-electromenager" checked>
+							    Gros electromenager
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="Petit-electromenager" value="Petit-electromenager">
+							    Petit electromenager
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="literie" value="Literie">
+							    Literie
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="meuble" value="Meuble">
+							    Meuble
+							  </label>
+							</div>
+						</div>
+		        	<input type="submit"/>
+		        </form>
+		    </div>
+		</div>
+	</div>
+</div>
+</div>

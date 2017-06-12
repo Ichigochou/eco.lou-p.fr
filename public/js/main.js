@@ -21,7 +21,7 @@ const eco = {
 				'<div class="row">'+
 					'<div id="'+id.homeNumberContainer+'" class="col-md-12 text-center"></div>'+
 					'<div class="col-md-12 text-center">'+
-						'<a href="#" id="'+id.btnSignalement+'">btnSignalement</a>'+
+						'<a href="signalement.php" id="'+id.btnSignalement+'">btnSignalement</a>'+
 					'</div>'+
 					'<div class="col-md-12 text-center">'+
 						'<a href="#" id="'+id.btnEnlevement+'">btnEnlevement</a>'+
@@ -36,6 +36,7 @@ const eco = {
 	},
 	loadSignalement(){
 		eco.log(ln());
+		ecoApi.requireJS('/js/assets/signalement'+(dev ? '' : '.min')+'.js', waitress.addStepClosure());
 	},
 	loadEnlevement(){
 		eco.log(ln());
