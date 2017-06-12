@@ -1,0 +1,81 @@
+<div id="enlevement">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h2>Merci de remplir un maximum d'information pour votre demande d'enlevement!</h2>
+			<div class="form-area">  
+		        <form action="demande_post.php" method="post" enctype="multipart/form-data" class="demande">
+		        	<br>
+	    				<div class="form-group">
+							<input type="text" class="form-control" id="address" name="address" placeholder="Adresse" required>
+              				<input id="submit" type="button" value="Geocode">
+						</div>
+							<div id="map"></div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+						</div>
+	                   <div class="form-group">
+							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first_name" required>
+						</div>
+	                    <div class="checkbox">
+	                    	<h3>Informations sur l'encombrant</h3>
+		                    <div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="optionsRadios1" value="Gros-electromenager" checked>
+							    Gros electromenager
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="Petit-electromenager" value="Petit-electromenager">
+							    Petit electromenager
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="literie" value="Literie">
+							    Literie
+							  </label>
+							</div>
+							<div class="radio">
+							  <label>
+							    <input type="radio" name="type" id="meuble" value="Meuble">
+							    Meuble
+							  </label>
+							</div>
+						</div>
+					    <div class="col-sm-6" style="height:130px;">
+					        <div class="form-group">
+					        	<label>Selectionnez l'heure qui vous convient</label>
+					            <div class="input-group date" data-provide="datepicker">
+								    <input type="text" name="calendrier" class="form-control">
+								    <div class="input-group-addon">
+								        <span class="glyphicon glyphicon-th"></span>
+								    </div>
+								</div>
+					        </div>
+					    </div>
+					    <div class="col-sm-6">
+					    	<div class="form-group">
+						      <label>Selectionnez le créneau horaire qui vous convient</label>
+						      <select name="horaire" class="form-control">
+								  <option value="9h-10h">9h à 10h</option>
+								  <option value="10h-11h">10h à 11h</option>
+								  <option value="11h-12h">11h à 12h</option>
+								  <option value="14h-15h">14h à 15h</option>
+								  <option value="15h-16h">15h à 16h</option>
+								  <option value="16h-17h">16h à 17h</option>
+								</select>
+						    </div>
+					    </div>
+		            
+		        	<input type="submit"/>
+		        </form>
+		    </div>
+		</div>
+	</div>
+</div>
+</div>

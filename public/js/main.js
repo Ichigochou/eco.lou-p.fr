@@ -8,6 +8,8 @@ const eco = {
 
 		// je charge mon composant qui permet de charger le nombre de signalement
 		ecoApi.requireJS('/js/assets/homeNumber'+(dev ? '' : '.min')+'.js', waitress.addStepClosure());
+		ecoApi.requireJS('/js/assets/eco.loadSignalement'+'.js');
+		ecoApi.requireJS('/js/assets/eco.loadEnlevement'+'.js');
 	},
 	displayHome(){
 		eco.log(ln());
@@ -21,10 +23,12 @@ const eco = {
 				'<div class="row">'+
 					'<div id="'+id.homeNumberContainer+'" class="col-md-12 text-center"></div>'+
 					'<div class="col-md-12 text-center">'+
-						'<button id="'+id.btnSignalement+'">btnSignalement</button>'+
+						'<button id="btnSignalement">btnSignalement</button>'+
+						'<div id="signalement"></div>'+
 					'</div>'+
 					'<div class="col-md-12 text-center">'+
-						'<a href="#" id="'+id.btnEnlevement+'">btnEnlevement</a>'+
+						'<button id="btnEnlevement">btnEnlevement</button>'+
+						'<div id="enlevement"></div>'+
 					'</div>'+
 				'</div>'+
 			'</div>'
@@ -36,7 +40,7 @@ const eco = {
 	},
 	loadSignalement(){
 		eco.log(ln());
-		ecoApi.requireJS('/js/assets/eco.loadSignalement'+'.js');
+		
 	},
 	loadEnlevement(){
 		eco.log(ln());
