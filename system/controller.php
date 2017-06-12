@@ -23,17 +23,17 @@ switch ($uri->segment[0]) {
 		break;
 
 	case 'mentions-legales':
-		// __CONT_/main.php
+		// __CONT_/mentions-legales.php
 		$controller = array('folder' => '', 'file' => 'mentions-legales');
 		break;
 
 	case 'signalement':
-		// __CONT_/main.php
+		// __CONT_/signalement.php
 		$controller = array('folder' => '', 'file' => 'signalement');
 		break;
 
 	case 'enlevement':
-		// __CONT_/main.php
+		// __CONT_/enlevement.php
 		$controller = array('folder' => '', 'file' => 'enlevement');
 		break;
 
