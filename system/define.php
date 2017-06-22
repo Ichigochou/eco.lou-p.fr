@@ -17,7 +17,8 @@ if ($domaine == "dev-eco.lou-p.fr") {
 	@ini_set("error_reporting", "-1"); // désactivation des messages d'erreur en prod
 	@ini_set("display_errors", "-1"); // désactivation des messages d'erreur en prod
 	define("_DOMAIN_", "eco.lou-p.fr");
-	define("_HOST_", "http://loupfrbddteco.mysql.db");
+	define("_HOST_", "188.165.53.185");
+	//define("_HOST_", "http://loupfrbddteco.mysql.db");
 	define("_USER_", "loupfrbddteco");
 	define("_PWD_", "1000cetN");
 	define ("_DB_", "loupfrbddteco");
