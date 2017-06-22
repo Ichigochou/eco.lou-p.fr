@@ -37,6 +37,26 @@ switch ($uri->segment[0]) {
 		$controller = array('folder' => '', 'file' => 'enlevement');
 		break;
 
+	case 'demande_post':
+		// __CONT_/enlevement.php
+		$controller = array('folder' => '', 'file' => 'demande_post');
+		break;
+
+	case 'login':
+		// __CONT_/enlevement.php
+		$controller = array('folder' => '', 'file' => 'login');
+		break;
+
+	case 'login_post':
+		// __CONT_/enlevement.php
+		$controller = array('folder' => '', 'file' => 'login_post');
+		break;
+
+	case 'admin':
+		// __CONT_/enlevement.php
+		$controller = array('folder' => '', 'file' => 'admin');
+		break;
+
 	case 'api':
 		switch ($uri->segment[1]) {
 			case 'v1':
