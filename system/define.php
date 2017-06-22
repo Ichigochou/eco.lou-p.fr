@@ -4,8 +4,9 @@ $domaine = $_SERVER['HTTP_HOST'];
 
 if ($domaine == "dev-eco.lou-p.fr") {
 	define("_DEV_", true);
-	@ini_set("error_reporting", "1"); // activation des messages d'erreur en prod
-	@ini_set("display_errors", "1"); // activation des messages d'erreur en prod
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
 	define("_DOMAIN_", "dev-eco.lou-p.fr");
 	define("_HOST_", "localhost");
 	define("_USER_", "lou-p");
@@ -15,7 +16,7 @@ if ($domaine == "dev-eco.lou-p.fr") {
 	define("_DEV_", false);
 	@ini_set("error_reporting", "-1"); // désactivation des messages d'erreur en prod
 	@ini_set("display_errors", "-1"); // désactivation des messages d'erreur en prod
-	define("_DOMAIN_", "eco.lou-p.fr");
+	define("_DOMAIN_", "http://eco.lou-p.fr");
 	define("_HOST_", "loupfrbddteco.mysql.db");
 	define("_USER_", "loupfrbddteco");
 	define("_PWD_", "1000cetN");
