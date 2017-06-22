@@ -39,7 +39,7 @@ switch ($uri->segment[0]) {
 			passthru("/usr/bin/git pull 2>&1");
 		}
 		echo "</pre>";
-		break;
+		die();
 
 	case 'api':
 		switch ($uri->segment[1]) {
