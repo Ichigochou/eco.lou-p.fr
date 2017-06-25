@@ -1,7 +1,15 @@
 body{
+	font-family: 'Roboto', sans-serif !important;
 	background-image: url(/../img/background.jpg) !important;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+a{
+	color: inherit !important;
+}
+button{
+	margin-bottom: 15px;
 }
 
 .admin{

@@ -23,11 +23,11 @@ const eco = {
 				'<div class="row">'+
 					'<div id="'+id.homeNumberContainer+'" class="col-md-12 text-center"></div>'+
 					'<div class="col-md-12 text-center">'+
-						'<button id="'+id.btnSignalement+'">btnSignalement</button>'+
+						'<button id="'+id.btnSignalement+'">Signaler un emcombrant</button>'+
 						'<div id="signalement"></div>'+
 					'</div>'+
 					'<div class="col-md-12 text-center">'+
-						'<button id="'+id.btnEnlevement+'">btnEnlevement</button>'+
+						'<button id="'+id.btnEnlevement+'">Prendre un rendez-vous</button>'+
 						'<div id="enlevement"></div>'+
 					'</div>'+
 				'</div>'+
@@ -42,8 +42,8 @@ const eco = {
 		eco.log(ln());
 		function initViewSignalement(){
 			var geocodeAddress = function(geocoder, resultsMap) {
-				var address = document.getElementById('address').value;
-				geocoder.geocode({'address': address}, function(results, status) {
+				var address = document.getElementById('adresse').value;
+				geocoder.geocode({'adresse': address}, function(results, status) {
 					if (status === 'OK') {
 						resultsMap.setCenter(results[0].geometry.location);
 						var marker = new google.maps.Marker({
@@ -100,8 +100,8 @@ const eco = {
 		eco.log(ln());
 		function initViewEnlevement(){
 			var geocodeAddress = function(geocoder, resultsMap) {
-				var address = document.getElementById('address').value;
-				geocoder.geocode({'address': address}, function(results, status) {
+				var address = document.getElementById('adresse').value;
+				geocoder.geocode({'adresse': address}, function(results, status) {
 					if (status === 'OK') {
 						resultsMap.setCenter(results[0].geometry.location);
 						var marker = new google.maps.Marker({

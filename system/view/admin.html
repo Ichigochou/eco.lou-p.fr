@@ -1,59 +1,71 @@
 <div class="col-md-12 text-center">
-			<p>voici les signalament fait:</p>
+	<p>voici les signalament fait:</p>
 </div>
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<?php
-				while ($signalement = $signalements->fetch_assoc()){
-					?>
-					
-					<div class="col-md-8 admin">
-						<div class="admin_adresse">
-							<h5><?=$signalement['adresse']?></h5>
-						</div>
-						<div class="admin_taille">
-							<p>1 : petit 2 : moyen 3 : gros</p>
-							<h5><?=$signalement['taille']?></h5>
-						</div>
-						<div class="admin_poid">
-							<p>1 : -10kg  2 : 10-30kg  3: +30kg</p>
-							<h5><?=$signalement['poid']?></h5>
-						</div>
-						<div class="admin_nombre">
-							<h5><?=$signalement['nombre']?></h5>
-						</div>
-						<div class="admin_nombre">
-							<h5><?=$signalement['mobile']?></h5>
-						</div>
-						<div class="admin_nombre">
-							<h5><?=$signalement['name']?></h5>
-						</div>
-						<div class="admin_nombre">
-							<h5><?=$signalement['first_name']?></h5>
-						</div>
-						<div class="admin_desc">
-							<h5><?=$signalement['description']?></h5>
-						</div>
-						<div class="admin_calendrier">
-							<h5><?=$signalement['calendrier']?></h5>
-						</div>
-						<div class="admin_nombre">
-							<h5><?=$signalement['horaire']?></h5>
-						</div>
-					</div>
-					<div class="col-md-1">
-						<a href="delete?id_url=<?php echo $donnees['id']; ?>"> <i class="material-icons">delete</i></a>
-					</div>
-					<div class="col-md-1">
-						<a href="add_com.php?id_url=<?php echo $donnees['id']; ?>"> <i class="material-icons">mode_edit</i></a>
-					</div>
-					<?
-				} ?>
+			<?php while ($signalement = $signalements->fetch_assoc()){ ?>
+			<?php ('SELECT * FROM signalement ORDER BY date'); ?>
 
+			<div class="col-md-8 admin signalement_<?=$signalement['id']?>">
+				<div class="admin_adresse">
+					<h5><?=$signalement['adresse']?></h5>
+				</div>
+				<div class="admin_taille">
+					<p>1 : petit 2 : moyen 3 : gros</p>
+					<h5><?=$signalement['taille']?></h5>
+				</div>
+				<div class="admin_poid">
+					<p>1 : -10kg  2 : 10-30kg  3: +30kg</p>
+					<h5><?=$signalement['poid']?></h5>
+				</div>
+				<div class="admin_nombre">
+					<h5><?=$signalement['nombre']?></h5>
+				</div>
+				<div class="admin_nombre">
+					<h5><?=$signalement['mobile']?></h5>
+				</div>
+				<div class="admin_nombre">
+					<h5><?=$signalement['name']?></h5>
+				</div>
+				<div class="admin_nombre">
+					<h5><?=$signalement['first_name']?></h5>
+				</div>
+				<div class="admin_desc">
+					<h5><?=$signalement['description']?></h5>
+				</div>
+				<div class="admin_calendrier">
+					<h5><?=date('d/m/Y', $signalement['calendrier'])?></h5>
+				</div>
+				<div class="admin_nombre">
+					<h5><?=$signalement['horaire']?></h5>
+				</div>
 			</div>
+			<div class="col-md-1 signalement_<?=$signalement['id']?>">
+				<a class="delete_signalement" data-id="<?=$signalement['id']?>"><i class="fa fa-trash fa-4x" aria-hidden="true"></i></a>
+			</div>
+			<div class="col-md-1 signalement_<?=$signalement['id']?>">
+				<a class="add_com" data-id="<?=$signalement['id']?>"><i class="fa fa-pencil-square fa-4x" aria-hidden="true"></i></a>
+			</div>
+			<? } ?>
+		</div>
 	</div>
 </div>
 
-
+<script type="text/javascript">
+	$('.delete_signalement').click(function(){
+		var id_signalement = $(this).data('id');
+		id_signalement = parseInt(id_signalement);
+		$.post('/delete', {
+			id_signalement: id_signalement
+		}, function(data, textStatus, xhr) {
+			if(data == '1'){
+				alert('Le signalement a bien été supprimé');
+				$('.signalement_'+id_signalement).remove();
+			}else{
+				alert (data);
+			};
+		});
+	});
+</script>
