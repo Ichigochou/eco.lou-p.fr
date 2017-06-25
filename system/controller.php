@@ -26,6 +26,7 @@ switch ($uri->segment[0]) {
 	case 'signalement':
 	case 'enlevement':
 	case 'demande_post':
+	case 'signalement_post':
 	case 'login':
 	case 'login_post':
 	case 'admin':
