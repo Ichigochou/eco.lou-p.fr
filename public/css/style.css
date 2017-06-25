@@ -3,3 +3,8 @@ body{
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+.admin{
+	border: 1px solid gree;
+	margin-bottom: 15px;
+}

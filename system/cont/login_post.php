@@ -1,30 +1,17 @@
 <?php
-
 $pass_hache = sha1($_POST['password']);
-$login = $_POST['login'];
+$login = mysqli_real_escape_string ( $BDD , $_POST['login'] );
 
+$awesomeQuery = "SELECT * FROM admin WHERE
+	login = \"".$login."\" AND
+	password = \"".$pass_hache."\"
+";
 
-$awesomeQuery = "SELECT admin (
-	login = :loginREQ,
-	password = :passwordREQ
-)";
-$awesomeQuery-> execute(array(
-	'loginREQ' =>$login,
-	'passwordREQ' =>$pass_hache
-	));
-/*$req = $bdd->prepare('SELECT id FROM admin WHERE login = :loginREQ AND password = :passwordREQ');
-$req->execute(array(
-	'loginREQ'=>$login,
-	'passwordREQ'=>$pass_hache
-	));
+$response=$BDD->query($awesomeQuery) or die($BDD->error);
 
-$resultat = $req->fetch();
-*/
-if (!$awesomeQuery) {
+if ($response->num_rows !=1 ) {
 	header('Location: login?msg=erreur');
 }else{
-	session_start();
-	$_SESSION['id'] = $resultat['id'];
 	$_SESSION['pseudo'] = $login;
 	header('Location: admin');
 }

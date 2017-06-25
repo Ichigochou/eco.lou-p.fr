@@ -23,39 +23,25 @@ switch ($uri->segment[0]) {
 		break;
 
 	case 'mentions-legales':
-		// __CONT_/mentions-legales.php
-		$controller = array('folder' => '', 'file' => 'mentions-legales');
-		break;
-
 	case 'signalement':
-		// __CONT_/signalement.php
-		$controller = array('folder' => '', 'file' => 'signalement');
-		break;
-
 	case 'enlevement':
-		// __CONT_/enlevement.php
-		$controller = array('folder' => '', 'file' => 'enlevement');
-		break;
-
 	case 'demande_post':
-		// __CONT_/enlevement.php
-		$controller = array('folder' => '', 'file' => 'demande_post');
-		break;
-
 	case 'login':
-		// __CONT_/enlevement.php
-		$controller = array('folder' => '', 'file' => 'login');
-		break;
-
 	case 'login_post':
-		// __CONT_/enlevement.php
-		$controller = array('folder' => '', 'file' => 'login_post');
+	case 'admin':
+	case 'delete':
+	case 'merci':
+		$controller = array('folder' => '', 'file' => $uri->segment[0]);
 		break;
 
-	case 'admin':
-		// __CONT_/enlevement.php
-		$controller = array('folder' => '', 'file' => 'admin');
-		break;
+	case 'pull':
+		echo "<pre>";
+		if (!_DEV_) {
+			chdir(dirname(__FILE__).'/../');
+			passthru("/usr/bin/git pull 2>&1");
+		}
+		echo "</pre>";
+		die();
 
 	case 'api':
 		switch ($uri->segment[1]) {

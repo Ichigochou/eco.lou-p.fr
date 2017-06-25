@@ -1,0 +1,56 @@
+<div class="col-md-12 text-center">
+			<p>voici les signalament fait:</p>
+</div>
+
+<div class="col-md-12">
+<?php
+
+	while ($signalement = $signalements->fetch_assoc()){
+		?>
+		
+		<div class="col-md-8 admin">
+			<div class="admin_time_creation">
+				<h5><?=$signalement['time_creation']?></h5>
+			</div>
+			<div class="admin_adresse">
+				<h5><?=$signalement['adresse']?></h5>
+			</div>
+			<div class="admin_taille">
+				<h5><?=$signalement['taille']?></h5>
+			</div>
+			<div class="admin_poid">
+				<h5><?=$signalement['poid']?></h5>
+			</div>
+			<div class="admin_nombre">
+				<h5><?=$signalement['nombre']?></h5>
+			</div>
+			<div class="admin_nombre">
+				<h5><?=$signalement['mobile']?></h5>
+			</div>
+			<div class="admin_nombre">
+				<h5><?=$signalement['name']?></h5>
+			</div>
+			<div class="admin_nombre">
+				<h5><?=$signalement['first_name']?></h5>
+			</div>
+			<div class="admin_desc">
+				<h5><?=$signalement['description']?></h5>
+			</div>
+			<div class="admin_calendrier">
+				<h5><?=$signalement['calendrier']?></h5>
+			</div>
+			<div class="admin_nombre">
+				<h5><?=$signalement['horaire']?></h5>
+			</div>
+		</div>
+		<div class="col-md-1">
+			<a href="delete?id_url=<?php echo $donnees['id']; ?>"> <i class="material-icons">delete</i></a>
+		</div>
+		<div class="col-md-1">
+			<a href="add_com.php?id_url=<?php echo $donnees['id']; ?>"> <i class="material-icons">mode_edit</i></a>
+		</div>
+		<?
+	} ?>
+
+</div>
+

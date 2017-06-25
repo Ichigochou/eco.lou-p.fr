@@ -4,116 +4,98 @@
 			<div class="col-md-12 text-center">
 				<h2>Merci de remplir un maximum d'information pour votre demande d'enlevement!</h2>
 				<div class="form-area">  
-					<br>
-					<div class="form-group">
-						<input type="text" class="form-control" id="address" name="address" placeholder="Adresse" required>
-						<input id="submit" type="button" value="Geocode">
-					</div>
-					<div id="map" style="height: 500px;"></div>
-					<div class="checkbox">
-						<h3>Informations sur l'encombrant</h3>
-						<div class="radio">
-							<label>
-								<input type="radio" name="taille" id="taille" value="petit" checked>
-								Petit
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="taille" id="taille" value="moyen">
-								Moyen
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="taille" id="taille" value="gros">
-								Gros
-							</label>
-						</div>
-					</div>
-					<div class="checkbox">
-						<h3>Informations sur l'encombrant</h3>
-						<div class="radio">
-							<label>
-								<input type="radio" name="poid" id="poid" value="-10kg" checked>
-								-10kg
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="poid" id="poid" value="10-30kg">
-								De 10-30kg
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="poid" id="poid" value="+30kg">
-								+30kg
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="name" name="name" placeholder="name" required>
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first_name" required>
-					</div>
-					<div class="checkbox">
-						<h3>Informations sur l'encombrant</h3>
-						<div class="radio">
-							<label>
-								<input type="radio" name="type" id="optionsRadios1" value="Gros-electromenager" checked>
-								Gros electromenager
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="type" id="Petit-electromenager" value="Petit-electromenager">
-								Petit electromenager
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="type" id="literie" value="Literie">
-								Literie
-							</label>
-						</div>
-						<div class="radio">
-							<label>
-								<input type="radio" name="type" id="meuble" value="Meuble">
-								Meuble
-							</label>
-						</div>
-					</div>
-					<div class="col-sm-6" style="height:130px;">
+					<form action="demande_post" method="post" enctype="multipart/form-data" class="demande">
+						<br>
 						<div class="form-group">
-							<label>Selectionnez le jour qui vous convient</label>
-							<div class="input-group date" data-provide="datepicker">
-								<input type="text" name="calendrier" class="form-control">
-								<div class="input-group-addon">
-									<span class="glyphicon glyphicon-th"></span>
+							<input type="text" class="form-control" id="addresse" name="adresse" placeholder="Adresse" required>
+							<input id="submit" type="button" value="Geocode">
+						</div>
+						<div id="map" style="height: 500px;"></div>
+						<div class="checkbox">
+							<h3>Informations sur l'encombrant</h3>
+							<div class="radio">
+								<label>
+									<input type="radio" name="taille" id="taille" value="petit" checked>
+									Petit
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="taille" id="taille" value="moyen">
+									Moyen
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="taille" id="taille" value="gros">
+									Gros
+								</label>
+							</div>
+						</div>
+						<div class="checkbox">
+							<h3>Informations sur l'encombrant</h3>
+							<div class="radio">
+								<label>
+									<input type="radio" name="poid" id="poid" value="-10kg" checked>
+									-10kg
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="poid" id="poid" value="10-30kg">
+									De 10-30kg
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="poid" id="poid" value="+30kg">
+									+30kg
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Quantités" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="first_name" name="first_name" placeholder="first_name" required>
+						</div>
+						<div class="col-sm-6" style="height:130px;">
+							<div class="form-group">
+								<label>Selectionnez le jour qui vous convient</label>
+								<div class="input-group date" data-provide="datepicker">
+									<input type="text" name="calendrier" class="form-control">
+									<div class="input-group-addon">
+										<span class="glyphicon glyphicon-th"></span>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="col-sm-6">
-						<div class="form-group">
-							<label>Selectionnez le créneau horaire qui vous convient</label>
-							<select name="horaire" class="form-control">
-								<option value="9h-10h">9h à 10h</option>
-								<option value="10h-11h">10h à 11h</option>
-								<option value="11h-12h">11h à 12h</option>
-								<option value="14h-15h">14h à 15h</option>
-								<option value="15h-16h">15h à 16h</option>
-								<option value="16h-17h">16h à 17h</option>
-							</select>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label>Selectionnez le créneau horaire qui vous convient</label>
+								<select name="horaire" class="form-control">
+									<option value="9h-10h">9h à 10h</option>
+									<option value="10h-11h">10h à 11h</option>
+									<option value="11h-12h">11h à 12h</option>
+									<option value="14h-15h">14h à 15h</option>
+									<option value="15h-16h">15h à 16h</option>
+									<option value="16h-17h">16h à 17h</option>
+								</select>
+							</div>
 						</div>
-					</div>
-					
-					<input type="submit" id="saveEnlevement" value="Enregistrer"/>
+						<div class="col-sm-12">
+							<input type="textarea" name="description" placeholder="Merci de renseignez des informations complémentaires" cols="150" rows="70" class="add_com"/>
+							<input type="hidden" name="MAX_FILE_SIZE" value="10000000000"/>
+							<input type="submit"/>
+						</div>
+
+					</form>
 				</div>
 			</div>
 		</div>
