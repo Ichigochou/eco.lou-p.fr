@@ -9,10 +9,34 @@ a{
 	color: inherit !important;
 }
 button{
-	margin-bottom: 15px;
+  flex: 1 1 auto;
+  margin: 15px !important;
+  padding: 20px;
+  border: 2px solid rgb(134,163,50)!important;
+  background-color: rgb(237,231,92)!important;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow:hidden;
+  transition: .3s;
+  font-weight: bold;
+  width: 275px;
+}
+
+.fa{
+	color: rgb(204,23,97);
+}
+
+.log{
+	float: right;
+	margin-right: 20px;
 }
 
 .admin{
 	border: 1px solid green;
 	margin-bottom: 15px;
+}
+
+.footer{
+	bottom: 0;
 }
