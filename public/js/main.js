@@ -72,7 +72,7 @@ const eco = {
 				// @TODO vérifier que l'user est connecter
 				// non -> connexion eco.loadLoginPage(callback)
 				// oui -> enregistrement
-				$.post('/demande_post', {
+				$.post('/signalement_post', {
 					taille: $("#taille").val(),
 					poid: $('#poid').val(),
 				}, function(data, textStatus, xhr) {
@@ -131,8 +131,15 @@ const eco = {
 				// non -> connexion eco.loadLoginPage(callback)
 				// oui -> enregistrement
 				$.post('/demande_post', {
+					adresse: $('#adresse').val(),
 					taille: $("#taille").val(),
 					poid: $('#poid').val(),
+					nombre: $('#nombre').val(),
+					name: $('#name').val(),
+					first_name: $('#first_name').val(),
+					description: $('#description').val(),
+					calendrier: $('#calendrier').val(),
+					horaire: $('#horaire').val(),
 				}, function(data, textStatus, xhr) {
 					console.info('textStatus = ', textStatus);
 					console.info('data = ', data);
