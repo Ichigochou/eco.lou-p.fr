@@ -1,14 +1,14 @@
-<div class="col-md-12 text-center">
-	<p>voici les signalament fait:</p>
+<div class="col-md-12 text-center admin">
+	<h3>voici les signalament fait:</h3>
 </div>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 admin_listing">
 			<?php while ($signalement = $signalements->fetch_assoc()){ ?>
 			<?php ('SELECT * FROM signalement ORDER BY date'); ?>
 
-			<div class="col-md-8 admin signalement_<?=$signalement['id']?>">
+			<div class="col-md-8 admin_listing_1 signalement_<?=$signalement['id']?>">
 				<div class="admin_adresse">
 					<h5><?=$signalement['adresse']?></h5>
 				</div>
@@ -42,10 +42,8 @@
 					<h5><?=$signalement['horaire']?></h5>
 				</div>
 			</div>
-			<div class="col-md-1 signalement_<?=$signalement['id']?>">
+			<div class="col-md-2 bouton_admin signalement_<?=$signalement['id']?>">
 				<a class="delete_signalement" data-id="<?=$signalement['id']?>"><i class="fa fa-trash fa-4x" aria-hidden="true"></i></a>
-			</div>
-			<div class="col-md-1 signalement_<?=$signalement['id']?>">
 				<a class="add_com" data-id="<?=$signalement['id']?>"><i class="fa fa-pencil-square fa-4x" aria-hidden="true"></i></a>
 			</div>
 			<? } ?>

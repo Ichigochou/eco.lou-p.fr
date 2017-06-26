@@ -33,10 +33,36 @@ button{
 }
 
 .admin{
-	border: 1px solid green;
 	margin-bottom: 15px;
 }
 
+.admin, .login{
+	margin-top: 20px;
+}
+
+.login, .password{
+	margin-bottom: 15px;
+}
+
+.admin_listing_1{
+	border: 1px solid rgb(55,67,30);
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.admin_listing{
+	background-color: rgba(237,231,92,0.7);
+}
+
+.bouton_admin{
+	margin-top: 10px;
+}
+
+.delete_signalement{
+	margin-right: 10px;
+}
+
 .footer{
+	margin-top: 50px;
 	bottom: 0;
 }
