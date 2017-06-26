@@ -8,7 +8,7 @@ $month = substr($_POST['calendrier'], 3, 2);
 $year = substr($_POST['calendrier'], 6, 4);
 
 // on créer le timeUnix avec la date anglaise
-$calendrier = str_to_time($day.'-'.$month.'-'.$year);
+$calendrier = str_to_date($month.'-'.$day.'-'.$year);
 
 $awesomeQuery = "INSERT INTO signalement (
 	user_id,

@@ -1,8 +1,9 @@
 body{
 	font-family: 'Roboto', sans-serif !important;
 	background-image: url(/../img/background.jpg) !important;
-	background-size: cover;
+	background-size: inherit;
 	background-repeat: no-repeat;
+	height: 100vh;
 }
 
 a{

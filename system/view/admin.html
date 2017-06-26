@@ -10,35 +10,43 @@
 
 			<div class="col-md-8 admin_listing_1 signalement_<?=$signalement['id']?>">
 				<div class="admin_adresse">
+					<h4>Adresse :</h4>
 					<h5><?=$signalement['adresse']?></h5>
 				</div>
 				<div class="admin_taille">
-					<p>1 : petit 2 : moyen 3 : gros</p>
+					<h4> Taille: 1 petit, 2 moyen, 3 gros :</h4>
 					<h5><?=$signalement['taille']?></h5>
 				</div>
 				<div class="admin_poid">
-					<p>1 : -10kg  2 : 10-30kg  3: +30kg</p>
+					<h4>Poid: 1 -10kg , 2 10-30kg, 3 +30kg :</h4>
 					<h5><?=$signalement['poid']?></h5>
 				</div>
 				<div class="admin_nombre">
+					<h4>Nombres d'encombrants:</h4>
 					<h5><?=$signalement['nombre']?></h5>
 				</div>
 				<div class="admin_nombre">
+					<h4>Numéros de téléphone:</h4>
 					<h5><?=$signalement['mobile']?></h5>
 				</div>
 				<div class="admin_nombre">
+					<h4>Nom :</h4>
 					<h5><?=$signalement['name']?></h5>
 				</div>
 				<div class="admin_nombre">
+					<h4>Prenom :</h4>
 					<h5><?=$signalement['first_name']?></h5>
 				</div>
 				<div class="admin_desc">
+					<h4>Description :</h4>
 					<h5><?=$signalement['description']?></h5>
 				</div>
 				<div class="admin_calendrier">
-					<h5><?=date('d/m/Y', $signalement['calendrier'])?></h5>
+					<h4>Date du rendez-vous :</h4>
+					<h5><?=$signalement['date2']?></h5>
 				</div>
 				<div class="admin_nombre">
+					<h4>Créneau horaire choisit :</h4>
 					<h5><?=$signalement['horaire']?></h5>
 				</div>
 			</div>

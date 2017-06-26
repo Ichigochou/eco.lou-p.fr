@@ -138,21 +138,11 @@ const eco = {
 					name: $('#name').val(),
 					first_name: $('#first_name').val(),
 					description: $('#description').val(),
-					calendrier: $('#calendrier').val(),
+					date2: $('#calendrier').val(),
 					horaire: $('#horaire').val(),
 				}, function(data, textStatus, xhr) {
 					console.info('textStatus = ', textStatus);
 					console.info('data = ', data);
-					if(data=="1") /* si la connexion en php a fonctionnée */
-					{
-						alert("Merci pour votre enlèvement");
-						/* on désactive l'affichage du formulaire et on affiche un message de bienvenue à la place */
-					}
-					else /* si la connexion en php n'a pas fonctionnée */
-					{
-						alert("Erreur lors de l'enregistrement");
-						/* on affiche un message d'erreur dans le span prévu à cet effet */
-					}
 					$('#enlevement').remove();
 				});
 				return false;
