@@ -13,7 +13,7 @@ require_once(_ROOT_.'/controller.php');
 
 # Nettoyage et compression html
 # mettre à 0 pour avoir du "code lisible" dans le navigateur
-$sanitize = 1;
+$sanitize = 0;
 require_once(_ROOT_.'/sanitize.php');
 
 # Exécution du Modele

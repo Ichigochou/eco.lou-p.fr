@@ -23,7 +23,7 @@ const eco = {
 				'<div class="row">'+
 					'<div id="'+id.homeNumberContainer+'" class="col-md-12 text-center"></div>'+
 					'<div class="col-md-12 text-center">'+
-						'<button id="'+id.btnSignalement+'">Signaler un encombrant</button>'+
+						'<button id="'+id.btnSignalement+'">Signaler un emcombrant</button>'+
 						'<div id="signalement"></div>'+
 					'</div>'+
 					'<div class="col-md-12 text-center">'+
@@ -151,35 +151,7 @@ const eco = {
 				document.getElementById('submit').addEventListener('click', function() {
 					geocodeAddress(geocoder, map);
 				});
-				var infoWindow = new google.maps.InfoWindow({map: map});
-
-		        // Try HTML5 geolocation.
-		        if (navigator.geolocation) {
-		          navigator.geolocation.getCurrentPosition(function(position) {
-		            var pos = {
-		              lat: position.coords.latitude,
-		              lng: position.coords.longitude
-		            };
-
-		            infoWindow.setPosition(pos);
-		            infoWindow.setContent('Location found.');
-		            map.setCenter(pos);
-		          }, function() {
-		            handleLocationError(true, infoWindow, map.getCenter());
-		          });
-		        } else {
-		          // Browser doesn't support Geolocation
-		          handleLocationError(false, infoWindow, map.getCenter());
-		        }
-		      });
-
-		      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-		        infoWindow.setPosition(pos);
-		        infoWindow.setContent(browserHasGeolocation ?
-		                              'Error: The Geolocation service failed.' :
-		                              'Error: Your browser doesn\'t support geolocation.');
-					};
-			
+			});
 
 			$("#saveEnlevement").click(function(){
 				console.info('#saveEnlevement triggered');
