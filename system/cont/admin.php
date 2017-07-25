@@ -1,5 +1,10 @@
 <?php
 
+/**
+ *	$signalement['calendrier'] <= si == 0 alors c'est un signalement, sinon c'est une demande d'enlèvement
+ */
+
+
 if (!isset($_SESSION['pseudo'])){
 	header('Location: /login');
 }else{

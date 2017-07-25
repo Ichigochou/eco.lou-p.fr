@@ -43,7 +43,7 @@ const eco = {
 		function initViewSignalement(){
 			var geocodeAddress = function(geocoder, resultsMap) {
 				var address = document.getElementById('adresse').value;
-				geocoder.geocode({'adresse': address}, function(results, status) {
+				geocoder.geocode({'address': address}, function(results, status) {
 					if (status === 'OK') {
 						resultsMap.setCenter(results[0].geometry.location);
 						var marker = new google.maps.Marker({
@@ -116,20 +116,19 @@ const eco = {
 						alert("Erreur lors de l'enregistrement");
 						/* on affiche un message d'erreur dans le span prévu à cet effet */
 					}
-					$('#signalement').remove();
+					$('#signalement').empty();
 				});
 				return false;
 			});
 		};
 		$('#signalement').load('signalement', initViewSignalement);
 	},
-
 	loadEnlevement(){
 		eco.log(ln());
 		function initViewEnlevement(){
 			var geocodeAddress = function(geocoder, resultsMap) {
 				var address = document.getElementById('adresse').value;
-				geocoder.geocode({'adresse': address}, function(results, status) {
+				geocoder.geocode({'address': address}, function(results, status) {
 					if (status === 'OK') {
 						resultsMap.setCenter(results[0].geometry.location);
 						var marker = new google.maps.Marker({
@@ -168,10 +167,21 @@ const eco = {
 					description: $('#description').val(),
 					date2: $('#calendrier').val(),
 					horaire: $('#horaire').val(),
+					mobile: $('#mobile').val()
 				}, function(data, textStatus, xhr) {
 					console.info('textStatus = ', textStatus);
 					console.info('data = ', data);
-					$('#enlevement').remove();
+					$('#enlevement').empty();
+					if(data=="1") /* si la connexion en php a fonctionnée */
+					{
+						alert("Merci pour votre enlèvement");
+						/* on désactive l'affichage du formulaire et on affiche un message de bienvenue à la place */
+					}
+					else /* si la connexion en php n'a pas fonctionnée */
+					{
+						alert("Erreur lors de l'enregistrement");
+						/* on affiche un message d'erreur dans le span prévu à cet effet */
+					}
 				});
 				return false;
 			});

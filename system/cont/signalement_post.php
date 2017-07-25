@@ -26,6 +26,4 @@ $awesomeQuery = "INSERT INTO signalement (
 )";
 
 $BDD->query($awesomeQuery) or die($BDD->error);
-
-
-header('Location: merci');
+echo "Signalement enregistré, merci =)";

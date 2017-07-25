@@ -3,12 +3,12 @@
 $time = time();
 
 // on décompose la date
-$day = substr($_POST['calendrier'], 0, 2);
-$month = substr($_POST['calendrier'], 3, 2);
-$year = substr($_POST['calendrier'], 6, 4);
+$day = substr($_POST['date2'], 0, 2);
+$month = substr($_POST['date2'], 3, 2);
+$year = substr($_POST['date2'], 6, 4);
 
 // on créer le timeUnix avec la date anglaise
-$calendrier = str_to_date($month.'-'.$day.'-'.$year);
+$calendrier = strtotime($month.'-'.$day.'-'.$year);
 
 $awesomeQuery = "INSERT INTO signalement (
 	user_id,
@@ -45,6 +45,4 @@ $awesomeQuery = "INSERT INTO signalement (
 )";
 
 $BDD->query($awesomeQuery) or die($BDD->error);
-
-
-header('Location: merci');
+echo "1";
