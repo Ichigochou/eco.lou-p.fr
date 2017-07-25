@@ -1,6 +1,6 @@
 body{
 	font-family: 'Roboto', sans-serif !important;
-	background-image: url(/../img/background.jpg) !important;
+	/* background-image: url(/../img/background.jpg) !important; */
 	background-size: inherit;
 	background-repeat: no-repeat;
 	height: 100vh;
@@ -22,6 +22,13 @@ button{
   transition: .3s;
   font-weight: bold;
   width: 275px;
+}
+
+footer{
+	position: absolute;
+	margin-top: 20px;
+    display: block;
+    width: 100%;
 }
 
 .fa{
@@ -67,7 +74,3 @@ button{
 	margin-right: 10px;
 }
 
-.footer{
-	margin-top: 50px;
-	bottom: 0;
-}
